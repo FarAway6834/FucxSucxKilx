@@ -13,7 +13,7 @@ def __xor__(self, x):
     return sum([(self[i]+x[i]-(2*(self[i]*x[i])))<<i for i in range(self.format('bit', x))])
 
 def __lshift__(self, x):
-    return ...
+    return (2**x)*self - (2**self.format('bit'))*(self//(2**(self.format('bit') - x)))
 
 def __rshift__(self, x):
     return self // (2 ** x)
